@@ -341,6 +341,7 @@ function lot_update()
 	
 end
 
+-- get cursor position on field
 function lot_get_field_point(x, y)
 	local p = 0xffbb	
 	x = x - 0x04
@@ -355,25 +356,6 @@ function lot_get_field_point(x, y)
 	until y < 0
 	return p & 0xffff
 end
---[[        
-MDLCAA4:                                ;CAA4:
-        LD      IX,0CFBBH               ;CAA4: DD21BBCF
-        LD      A,D                     ;CAA8: 7A
-        SUB     004H                    ;CAA9: D604
-        LD      BC,0006H                ;CAAB: 010600
-LBLCAAE:                                ;CAAE:
-        ADD     IX,BC                   ;CAAE: DD09
-        SUB     030H                    ;CAB0: D630
-        JR      NC,LBLCAAE              ;CAB2: 30FA
-        LD      A,E                     ;CAB4: 7B
-        SUB     014H                    ;CAB5: D614
-        LD      C,0A0H                  ;CAB7: 0EA0
-LBLCAB9:                                ;CAB9:
-        ADD     IX,BC                   ;CAB9: DD09
-        SUB     028H                    ;CABB: D628
-        JR      NC,LBLCAB9              ;CABD: 30FA
-        RET                             ;CABF: C9
-]]
 
 -- draw lotlotlot
 function lot_draw(ox, oy)
